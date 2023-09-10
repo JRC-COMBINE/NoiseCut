@@ -1,0 +1,88 @@
+name: Build and Test
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - main
+jobs:
+
+  lint-format-and-static-code-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Install pre-commit
+        run: |
+          pip install pre-commit
+      - name: Lint, Format, and other static code quality checks
+        run: |
+          /bin/bash -x run.sh lint:ci
+
+  build-wheel-and-sdist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Install build CLI
+        run: |
+          pip install build
+      - name: Build python package
+        run: |
+          /bin/bash -x run.sh build
+      - name: Upload wheel and sdist
+        uses: actions/upload-artifact@v3
+        with:
+          name: wheel-and-sdist
+          path: ./dist/*
+
+  execute-tests:
+    needs:
+      - build-wheel-and-sdist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Download wheel and sdist
+        uses: actions/download-artifact@v3
+        with:
+          name: wheel-and-sdist
+          path: ./dist/
+      - name: Install test dependencies
+        run: |
+          pip install pytest pytest-cov ./dist/*.whl
+      - name: Lint, Format, and other static code quality checks
+        run: |
+          /bin/bash -x run.sh test:ci
+
+  # https://docs.github.com/en/actions/learn-github-actions/contexts#example-printing-context-information-to-the-log
+  dump-contexts-to-log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
+      - name: Dump secrets
+        run: echo '${{ toJSON(secrets) }}'
+      - name: Dump vars
+        run: echo '${{ toJSON(vars) }}'
