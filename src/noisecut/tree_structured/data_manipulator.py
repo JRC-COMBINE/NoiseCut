@@ -4,7 +4,7 @@
 
 import math
 import random
-from typing import Any
+from typing import Any, Union
 
 import numpy as np
 import numpy.typing as npt
@@ -79,8 +79,8 @@ class DataManipulator(BaseStructuredData):
 
     def split_data(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
         percentage_training_data: float,
     ) -> tuple[
         npt.NDArray[np.bool_],
@@ -156,8 +156,8 @@ class DataManipulator(BaseStructuredData):
 
     def get_noisy_data(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
         percentage_noise: float,
     ) -> tuple[npt.NDArray[np.bool_], npt.NDArray[np.bool_]]:
         """
@@ -198,8 +198,8 @@ class DataManipulator(BaseStructuredData):
 
     def write_data_in_file(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
         file_name: str,
     ) -> None:
         """

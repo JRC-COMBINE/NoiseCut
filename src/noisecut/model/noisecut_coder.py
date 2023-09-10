@@ -9,7 +9,7 @@ ATTENTION :
 """
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
-
+from typing import Union
 
 import numpy as np
 import numpy.typing as npt
@@ -98,7 +98,7 @@ class CoderNoiseCut(StructuredData):
 
     def __init__(
         self,
-        n_input_each_box: list[int] | npt.NDArray[np.int_],
+        n_input_each_box: Union[list[int], npt.NDArray[np.int_]],
         threshold: float = 0.5,
     ) -> None:
         super().__init__(n_input_each_box)
@@ -296,8 +296,8 @@ class CoderNoiseCut(StructuredData):
 
     def coder_set_training_data(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
     ) -> None:
         """
         Set `x` and `y` dataset.
@@ -355,8 +355,8 @@ class CoderNoiseCut(StructuredData):
 
     def coder_add_training_data(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
     ) -> None:
         """
         Add `x` and `y` dataset to the existing dataset.
@@ -405,8 +405,8 @@ class CoderNoiseCut(StructuredData):
 
     def coder_fit(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
         with_more_data: bool = False,
         print_result: bool = False,
         print_weights: bool = False,
@@ -490,7 +490,7 @@ class CoderNoiseCut(StructuredData):
         self.model_fitted = True
 
     def coder_predict(
-        self, x: list[bool] | npt.NDArray[np.bool_]
+        self, x: Union[list[bool], npt.NDArray[np.bool_]]
     ) -> npt.NDArray[np.bool_]:
         """
         Return predicted output of the NoiseCut model to the binary inout `x`.
@@ -546,7 +546,7 @@ class CoderNoiseCut(StructuredData):
         return self.build_complete_data_set_y_array()
 
     def coder_set_uncertainty_measure(
-        self, file_path_result: str | None = None
+        self, file_path_result: Union[str, None] = None
     ) -> None:
         """
         Set uncertainty.
@@ -619,7 +619,7 @@ class CoderNoiseCut(StructuredData):
             self.probability_known = True
 
     def coder_predict_probability_of_being_1(
-        self, x: list[bool] | npt.NDArray[np.bool_]
+        self, x: Union[list[bool], npt.NDArray[np.bool_]]
     ) -> npt.NDArray[np.float_]:
         """
         Return probability of the predicted target output to be 1.
@@ -690,7 +690,7 @@ class CoderNoiseCut(StructuredData):
         )
 
     def __set_score(
-        self, vector_n_score: list[float] | npt.NDArray[np.float_]
+        self, vector_n_score: Union[list[float], npt.NDArray[np.float_]]
     ) -> None:
         """
         Set score based on probability value.
@@ -729,8 +729,8 @@ class CoderNoiseCut(StructuredData):
 
     def coder_predict_score(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        vector_n_score: list[float] | npt.NDArray[np.float_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        vector_n_score: Union[list[float], npt.NDArray[np.float_]],
         validate: bool = True,
     ) -> npt.NDArray[np.int_]:
         """
@@ -798,9 +798,9 @@ class CoderNoiseCut(StructuredData):
 
     def coder_predict_mortality_of_each_score(
         self,
-        x_test: list[bool] | npt.NDArray[np.bool_],
-        y_test: list[bool] | npt.NDArray[np.bool_],
-        vector_n_score: list[float] | npt.NDArray[np.float_],
+        x_test: Union[list[bool], npt.NDArray[np.bool_]],
+        y_test: Union[list[bool], npt.NDArray[np.bool_]],
+        vector_n_score: Union[list[float], npt.NDArray[np.float_]],
         print_mortality: bool = False,
     ) -> tuple[
         npt.NDArray[np.float_], npt.NDArray[np.int_], npt.NDArray[np.int_]
@@ -891,8 +891,8 @@ class Metric(Base):
 
     @staticmethod
     def set_confusion_matrix(
-        y_test: list[bool] | npt.NDArray[np.bool_],
-        y_predicted: list[bool] | npt.NDArray[np.bool_],
+        y_test: Union[list[bool], npt.NDArray[np.bool_]],
+        y_predicted: Union[list[bool], npt.NDArray[np.bool_]],
     ) -> tuple[float, float, float, float]:  # numpydoc ignore=RT03
         """
         Set confusion matrix.

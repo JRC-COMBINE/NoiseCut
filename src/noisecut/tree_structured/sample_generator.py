@@ -1,6 +1,7 @@
 """Sample Generator class."""
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
+from typing import Union
 
 import numpy as np
 import numpy.typing as npt
@@ -43,7 +44,7 @@ class SampleGenerator(StructuredData):
 
     def __init__(
         self,
-        n_input_each_box: list[int] | npt.NDArray[np.int_],
+        n_input_each_box: Union[list[int], npt.NDArray[np.int_]],
         allowance_rand: bool = False,
     ) -> None:
         super().__init__(n_input_each_box)

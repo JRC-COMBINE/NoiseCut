@@ -2,7 +2,7 @@
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
 
-from typing import Any
+from typing import Any, Union
 
 import numpy as np
 import numpy.typing as npt
@@ -39,7 +39,7 @@ class BaseMaxCut(Base):
     def __init__(self):
         self.n_vertices: int = 0
         self.size_w: int = 0
-        self.weight: None | npt.NDArray[np.float_] = None
+        self.weight: Union[None, npt.NDArray[np.float_]] = None
 
     def validate_n(self, n: Any) -> bool:
         """

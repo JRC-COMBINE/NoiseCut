@@ -2,7 +2,7 @@
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
 
-from typing import Any
+from typing import Any, Union
 
 import numpy as np
 import numpy.typing as npt
@@ -77,7 +77,7 @@ class Base:
         return True
 
     @staticmethod
-    def are_list_elements_integer(array: list | npt.NDArray) -> bool:
+    def are_list_elements_integer(array: Union[list, npt.NDArray]) -> bool:
         """
         Return whether all elements of an `array` are integer.
 
@@ -100,7 +100,7 @@ class Base:
 
     @staticmethod
     def are_integer_elements_greater_than_zero(
-        array: list[int] | npt.NDArray[np.int_],
+        array: Union[list[int], npt.NDArray[np.int_]],
     ) -> bool:
         """
         Return whether all elements of `array` are greater than zero.
@@ -147,7 +147,7 @@ class Base:
         )
 
     @staticmethod
-    def is_array_binary(array: list | npt.NDArray) -> bool:
+    def is_array_binary(array: Union[list, npt.NDArray]) -> bool:
         """
         Return whether all the elements of `array` are boolean.
 

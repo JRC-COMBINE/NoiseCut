@@ -1,6 +1,7 @@
 """Generate a structure for the dataset."""
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
+from typing import Union
 
 import numpy as np
 import numpy.typing as npt
@@ -42,7 +43,7 @@ class StructuredData(BaseStructuredData):
     """
 
     def __init__(
-        self, n_input_each_box: list[int] | npt.NDArray[np.int_]
+        self, n_input_each_box: Union[list[int], npt.NDArray[np.int_]]
     ) -> None:
         super().__init__()
 
@@ -71,7 +72,7 @@ class StructuredData(BaseStructuredData):
             )
 
     def set_binary_function_of_box(
-        self, id_box: int, func: list[bool] | npt.NDArray[np.bool_]
+        self, id_box: int, func: Union[list[bool], npt.NDArray[np.bool_]]
     ) -> None:
         """
         Return the binary function of the requested box.
@@ -106,7 +107,7 @@ class StructuredData(BaseStructuredData):
         return self.all_f[id_box].function
 
     def set_binary_function_black_box(
-        self, func: list[bool] | npt.NDArray[np.bool_]
+        self, func: Union[list[bool], npt.NDArray[np.bool_]]
     ) -> None:
         """
         Return binary function of the 2nd-layer black box.
@@ -389,7 +390,7 @@ class StructuredData(BaseStructuredData):
         return y_number
 
     def get_complete_data_set(
-        self, file_name: str | None = None
+        self, file_name: Union[str, None] = None
     ) -> tuple[npt.NDArray[np.bool_], npt.NDArray[np.bool_]]:
         """
         Return and write output of the system to all possible input binaries.

@@ -5,7 +5,7 @@ Binary Function.
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
 
 import random
-from typing import Any
+from typing import Any, Union
 
 import numpy as np
 import numpy.typing as npt
@@ -65,7 +65,7 @@ class BinaryFunction:
             self.n_diff_states, bool
         )
 
-        self.w: npt.NDArray[np.int_] | None = None
+        self.w: Union[npt.NDArray[np.int_], None] = None
 
     def set_random_binary_function(self) -> None:
         """Set binary `function` values randomly."""
@@ -80,7 +80,7 @@ class BinaryFunction:
 
     def set_binary_function_manually(
         self,
-        input_function: list[bool] | npt.NDArray[np.bool_],
+        input_function: Union[list[bool], npt.NDArray[np.bool_]],
     ) -> None:
         """
         Set binary `function` values by the `input_function`.
@@ -96,7 +96,7 @@ class BinaryFunction:
 
     def calc_output_func(
         self,
-        binary_input: list[bool] | npt.NDArray[np.bool_],
+        binary_input: Union[list[bool], npt.NDArray[np.bool_]],
     ) -> np.bool_:
         """
         Return calculated output of the function based on the binary input.
@@ -196,7 +196,7 @@ class BinaryFunction:
             binary_input: npt.NDArray[
                 np.bool_
             ] = self.__convert_decimal_to_reverse_binary(id_state).astype(int)
-            binary_output: int | bool = int(self.function[id_state])
+            binary_output: Union[int, bool] = int(self.function[id_state])
             if id_state != self.n_diff_states - 1:
                 print_statement += f"({binary_input}: {binary_output}), "
             else:
@@ -227,7 +227,8 @@ class BinaryFunction:
 
     @staticmethod
     def validate_binary_input(
-        binary_input: list[bool] | npt.NDArray[np.bool_], expected_size: int
+        binary_input: Union[list[bool], npt.NDArray[np.bool_]],
+        expected_size: int,
     ) -> tuple[bool, npt.NDArray[np.bool_]]:
         """
         Validate `binary_input` as expected to match the `expected_size`.

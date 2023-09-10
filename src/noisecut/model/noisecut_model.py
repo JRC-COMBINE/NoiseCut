@@ -3,6 +3,7 @@ NoiseCut class for the usage of user.
 """
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
+from typing import Union
 
 import numpy as np
 import numpy.typing as npt
@@ -30,15 +31,15 @@ class NoiseCut:
 
     def __init__(
         self,
-        n_input_each_box: list[int] | npt.NDArray[np.int_],
+        n_input_each_box: Union[list[int], npt.NDArray[np.int_]],
         threshold: float = 0.5,
     ) -> None:
         self.__model = CoderNoiseCut(n_input_each_box, threshold)
 
     def fit(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        y: list[bool] | npt.NDArray[np.bool_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        y: Union[list[bool], npt.NDArray[np.bool_]],
         with_more_data: bool = False,
         print_result: bool = False,
         print_weights: bool = False,
@@ -70,7 +71,7 @@ class NoiseCut:
         )
 
     def predict(
-        self, x: list[bool] | npt.NDArray[np.bool_]
+        self, x: Union[list[bool], npt.NDArray[np.bool_]]
     ) -> npt.NDArray[np.bool_]:
         """
         Return predicted output of the NoiseCut model to the binary inout `x`.
@@ -113,7 +114,7 @@ class NoiseCut:
         return self.__model.coder_predict_all()
 
     def set_uncertainty_measure(
-        self, file_path_result: str | None = None
+        self, file_path_result: Union[str, None] = None
     ) -> None:
         """
         Set uncertainty.
@@ -126,7 +127,7 @@ class NoiseCut:
         self.__model.coder_set_uncertainty_measure(file_path_result)
 
     def predict_probability_of_being_1(
-        self, x: list[bool] | npt.NDArray[np.bool_]
+        self, x: Union[list[bool], npt.NDArray[np.bool_]]
     ) -> npt.NDArray[np.float_]:
         """
         Return probability of the predicted target output to be 1.
@@ -162,8 +163,8 @@ class NoiseCut:
 
     def predict_score(
         self,
-        x: list[bool] | npt.NDArray[np.bool_],
-        vector_n_score: list[float] | npt.NDArray[np.float_],
+        x: Union[list[bool], npt.NDArray[np.bool_]],
+        vector_n_score: Union[list[float], npt.NDArray[np.float_]],
     ) -> npt.NDArray[np.int_]:
         """
         Return predicted score for each binary input of `x`.
@@ -195,9 +196,9 @@ class NoiseCut:
 
     def predict_mortality_of_each_score(
         self,
-        x_test: list[bool] | npt.NDArray[np.bool_],
-        y_test: list[bool] | npt.NDArray[np.bool_],
-        vector_n_score: list[float] | npt.NDArray[np.float_],
+        x_test: Union[list[bool], npt.NDArray[np.bool_]],
+        y_test: Union[list[bool], npt.NDArray[np.bool_]],
+        vector_n_score: Union[list[float], npt.NDArray[np.float_]],
         print_mortality: bool = False,
     ) -> tuple[
         npt.NDArray[np.float_], npt.NDArray[np.int_], npt.NDArray[np.int_]

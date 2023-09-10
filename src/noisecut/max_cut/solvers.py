@@ -1,6 +1,7 @@
 """MaxCut solver."""
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
+from typing import Union
 
 import gurobipy as gp
 import numpy as np
@@ -14,7 +15,9 @@ class MaxCutSolvers(BaseMaxCut):
     """Maxcut solver for solving maxcut problem."""
 
     def set_weight_1d_and_n_vertices(
-        self, weight: npt.NDArray[np.float_] | list[float], n_vertices: int
+        self,
+        weight: Union[npt.NDArray[np.float_], list[float]],
+        n_vertices: int,
     ) -> None:
         """
         Set Number of vertices and weight of edges between vertices.
@@ -41,7 +44,9 @@ class MaxCutSolvers(BaseMaxCut):
         assert self.validate_n_w_1d(weight, n_vertices)
 
     def set_weight_2d_and_n_vertices(
-        self, weight: npt.NDArray[np.float_] | list[float], n_vertices: int
+        self,
+        weight: Union[npt.NDArray[np.float_], list[float]],
+        n_vertices: int,
     ):
         """
         Set Number of vertices and weight of edges between vertices.
