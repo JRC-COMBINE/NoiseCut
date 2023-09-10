@@ -3,7 +3,10 @@ from pathlib import Path
 import numpy
 import pandas as pd
 import pytest
-from numpy.testing import assert_array_equal, assert_array_almost_equal
+from numpy.testing import (
+    assert_array_almost_equal,
+    assert_array_equal,
+)
 
 from noisecut.max_cut.solvers import MaxCutSolvers
 from noisecut.model.noisecut_coder import (

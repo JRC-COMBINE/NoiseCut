@@ -14,10 +14,10 @@ ATTENTION :
 import numpy as np
 import numpy.typing as npt
 
+from noisecut.max_cut.solvers import MaxCutSolvers
 from noisecut.tree_structured.base import Base
 from noisecut.tree_structured.base_structured_data import BasePseudoBooleanFunc
 from noisecut.tree_structured.structured_data import StructuredData
-from noisecut.max_cut.solvers import MaxCutSolvers
 
 
 class CoderNoiseCut(StructuredData):

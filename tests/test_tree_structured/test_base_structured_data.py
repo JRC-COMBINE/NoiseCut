@@ -2,8 +2,8 @@ import numpy as np
 import pytest
 from numpy.testing import assert_array_equal
 
-from noisecut.tree_structured.base_structured_data import BaseStructuredData
 from noisecut.model.noisecut_coder import PseudoBooleanFunc
+from noisecut.tree_structured.base_structured_data import BaseStructuredData
 
 
 @pytest.fixture
