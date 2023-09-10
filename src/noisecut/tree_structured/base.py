@@ -2,7 +2,10 @@
 
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
 
-from typing import Any, Union
+from typing import (
+    Any,
+    Union,
+)
 
 import numpy as np
 import numpy.typing as npt
