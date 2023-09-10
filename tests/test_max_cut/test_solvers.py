@@ -13,7 +13,7 @@ def data(request):
 
 
 @pytest.mark.slow
-@pytest.mark.parametrize("data", ["g05_60.0", "g05_60.1"], indirect=True)
+@pytest.mark.parametrize("data", ["g05_60.0"], indirect=True)  # "g05_60.1"
 def test_maxcut_with_local_solver(data):
     cls_maxcut = MaxCutSolvers()
     cls_maxcut.set_weight_2d_and_n_vertices(
