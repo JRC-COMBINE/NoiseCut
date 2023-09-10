@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "noisecut"
+description = "A Tree-structured Hybrid model."
+readme = "README.md"
+license = {text = "GPLv3"}
+authors = [
+    {name = "Hedieh Mirzaieazar", email = "hedieh.mirzaieazar@rwth-aachen.de"},
+]
+requires-python = ">=3.9"
+dependencies = [
+  'numpy',
+  'pandas',
+  'scipy',
+  'gurobipy',
+]
+classifiers = [
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Operating System :: Linux",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering",
+  "License :: OSI Approved :: GPL-3.0 License",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+release = ["build", "twine"]
+static-code-qa = ["pre-commit"]
+docs = ["jupyter"]
+dev = ["noisecut[test,release,static-code-qa]"]
+
+# docs: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
+[tool.setuptools.dynamic]
+version = { file = "version.txt" }
+
+[tool.pytest.ini_options]
+markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+filterwarnings = [
+    "ignore::UserWarning",
+]
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+multi_line_output = "VERTICAL_HANGING_INDENT"
+force_grid_wrap = 2
+line_length = 79
+
+[tool.ruff]
+select = ["E", "F"]
+
+ignore = []
+
+unfixable = []
+line-length = 79
+
+[tool.numpydoc_validation]
+checks = [
+    "all",   # report on all checks, except the below
+    "ES01",  # Extended description
+    "SA01", # See Also section not found
+    "EX01",  # No examples section found
+]
+
+exclude = [
+  '\.__init__$',
+  '\.__repr__$',
+  'test*',
+  '__init__',
+  'data',
+  'conf',
+]
+
+[tool.mypy]
+ignore_missing_imports = true
