@@ -30,6 +30,5 @@ coverage.xml
 report.xml
 htmlcov
 ./test-reports
-docs/10D_example
 docs/6D_example
 docs/result_noisecut
