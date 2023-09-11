@@ -113,7 +113,7 @@ function clean {
       -type f \
       \( \
         -name "example" \
-        -o -name "10D_example" \
+        -o -name "6D_example" \
         -o -name "result_noisecut" \
         -o -name "synthetic_data_01" \
         -o -name "uncertainty" \
