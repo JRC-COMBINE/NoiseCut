@@ -54,7 +54,7 @@ html_theme_options = {
     "titles_only": False,
 }
 
-html_logo = "artwork/black.png"
+html_logo = "artwork/NoiseCut_logo_black.png"
 
 # Napoleon settings
 napoleon_numpy_docstring = True
