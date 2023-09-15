@@ -51,7 +51,7 @@ Reports](https://matthewrocklin.com/minimal-bug-reports).
 ## Installing the latest version
 
 To get the very latest version of NoiseCut, you can pip-install the library directly
-from the `master` branch:
+from the `main` branch:
 
 ```bash
 pip install git+https://github.com/JRC-COMBINE/NoiseCut.git@main
