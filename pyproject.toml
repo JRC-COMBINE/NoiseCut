@@ -34,8 +34,9 @@ dynamic = ["version"]
 test = ["pytest", "pytest-cov"]
 release = ["build", "twine"]
 static-code-qa = ["pre-commit"]
-docs = ["jupyter"]
-dev = ["noisecut[test,release,static-code-qa]"]
+notebook = ["jupyter"]
+docs = ["sphinx", "nbsphinx", "sphinx-autoapi", "sphinx-rtd-theme", "myst-parser", "sphinx-autobuild"]
+dev = ["noisecut[test,release,static-code-qa,docs]"]
 
 # docs: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
 [tool.setuptools.dynamic]
