@@ -30,6 +30,7 @@ You can contribute by:
 [issues]: https://github.com/JRC-COMBINE/NoiseCut/issues
 [pulls]: https://github.com/JRC-COMBINE/NoiseCut/pulls
 [discussions]: https://github.com/JRC-COMBINE/NoiseCut/discussions
+[pyproject]: https://github.com/JRC-COMBINE/NoiseCut/blob/main/pyproject.toml
 
 ## Writing helpful bug reports
 
@@ -110,7 +111,7 @@ python -m venv ./venv
 
 ### Installing from source
 
-Pip-install the project, in the path in which [pyproject.toml](pyproject.toml) 
+Pip-install the project, in the path in which [pyproject.toml][pyproject] 
 file exists, with the `--editable` flag, which ensures that any
 changes you make to the source code are immediately reflected in your
 environment.
@@ -119,7 +120,7 @@ environment.
 pip install --editable '.[dev,notebook]'
 ```
 
-The various pip extras are defined in [pyproject.toml](pyproject.toml):
+The various pip extras are defined in [pyproject.toml][pyproject]:
 
 - `test`: a minimal set of dependencies to run pytest.
 - `release`: dependencies for publishing package on pypi.
