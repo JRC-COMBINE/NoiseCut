@@ -65,6 +65,11 @@ function run-tests {
     return $PYTEST_EXIT_STATUS
 }
 
+function build-html {
+    clean
+    sphinx-autobuild docs/ docs/_build/html
+}
+
 function test:wheel-locally {
     deactivate || true
     rm -rf test-env || true
@@ -99,6 +104,7 @@ function clean {
         -o -name "*.egg-info" \
         -o -name "*htmlcov" \
         -o -name "test-env" \
+        -o -name "_build" \
       \) \
       -not -path "*env/*" \
       -exec rm -r {} + || true
