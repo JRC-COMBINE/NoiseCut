@@ -16,6 +16,9 @@ repos:
       # Attempts to load all yaml files to verify syntax; unsafe: only check syntax, do not load yaml
       - id: check-yaml
         args: ["--unsafe"]
+      - id: check-json
+      - id: pretty-format-json
+        args: ["--indent=2", "--autofix", "--no-sort-keys"]
       # Fail if staged files are above a certain size.
       # To add a large file, use 'git lfs track <file>; git add <file> to track large files with
       # git-lfs rather than commiting them directly to the git history
@@ -58,7 +61,10 @@ repos:
     hooks:
       - id: black
         args:
-          - --config=./pyproject.toml
+          [
+            --exclude="venv",
+            --config=./pyproject.toml,
+          ]
 
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
