@@ -59,4 +59,4 @@ html_logo = "artwork/NoiseCut_logo_black.png"
 # Napoleon settings
 napoleon_numpy_docstring = True
 
-nbsphinx_execute = "always"
+nbsphinx_execute = "never"
