@@ -12,6 +12,7 @@
     - [Code checks with precommit](#code-checks-with-precommit)
     - [Unit tests with pytest](#unit-tests-with-pytest)
     - [Code Coverage](#code-coverage)
+    - [Building web pages](#building-web-pages)
   - [Pull Requests (PRs)](#pull-requests-prs)
     - [Etiquette for creating PRs](#etiquette-for-creating-prs)
     - [Checklist for publishing PRs](#checklist-for-publishing-prs)
@@ -186,6 +187,22 @@ The coverage of unit tests can be seen as a web report with:
 ```
 
 You can see the result in your browser by going to the [localhost:8000](http://localhost:8000).
+
+### Building web pages
+
+Sphinx is used for automatic generation of html files for `noisecut` 
+repository. If you have added lines of code to src directory of the package or  
+you have modified an existing jupyter notebook, you can simply update the 
+corresponding html files using: 
+
+```bash
+./run.sh build-html
+``` 
+
+However, if you aim to add a jupyter notebook for the first time, by running 
+the above command, the corresponding html files are build but you need to 
+add the jupyter notebook's name to the doctree in [index.md](docs/index.md) 
+file.
 
 ## Pull Requests (PRs)
 
