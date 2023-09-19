@@ -29,10 +29,10 @@ $ pip install noisecut
 
 ## Usage
 
-Use cases of the useful functions of this package has been provided on the 
-[example.ipynb](notebooks/example.ipynb) notebook. It shows how to use the 
-package to fit the model and investigate the predicted results in score,
-probability or simple binary output format.
+Use cases of the useful functions of `noisecut` package has been provided on 
+examples section. Examples show you how to use the package to fit the model and 
+investigate the predicted results in score, probability or simple binary 
+output format.
 
 ## License
 
