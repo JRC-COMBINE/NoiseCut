@@ -37,12 +37,54 @@ Bofore you can use NoiseCut package, you need to install `noisecut` using pip:
 $ pip install noisecut
 ```
 
+## Simple demo
+
+Code snippet shown below summarizes a complete workflow, starting with
+the generation of synthetic data, proceeding to the division of data into
+training and testing sets, and concluding with model fitting and result
+evaluation.
+
+```python
+from noisecut.model.noisecut_coder import Metric
+from noisecut.model.noisecut_model import NoiseCut
+from noisecut.tree_structured.data_manipulator import DataManipulator
+from noisecut.tree_structured.sample_generator import SampleGenerator
+
+# Synthetic data generation
+gen_dataset = SampleGenerator(
+    [4, 4, 4], allowance_rand=True
+)  # [4,4,4] determines the number of inputs to each black box of the FN model
+X, y = gen_dataset.get_complete_data_set()
+
+# Add noise in data labeling. Train and test set split.
+x_noisy, y_noisy = DataManipulator().get_noisy_data(X, y, percentage_noise=10)
+x_train, y_train, x_test, y_test = DataManipulator().split_data(
+    x_noisy, y_noisy, percentage_training_data=50
+)
+
+# Training
+mdl = NoiseCut(
+    n_input_each_box=[4, 4, 4]
+)  # 'n_input_each_box' should fit to the generated data
+mdl.fit(x_train, y_train)
+
+# Evaluation
+y_pred = mdl.predict(x_test)
+accuracy, recall, precision, F1 = Metric.set_confusion_matrix(y_test, y_pred)
+```
+
 ## Usage
 
-Use cases of the useful functions of `noisecut` package has been provided on
-[docs/notebooks](docs/notebooks/) in Jupyter notebook format. Examples show
-you how to use the package to fit the model and investigate the predicted
-results in score, probability or simple binary output format.
+Various use cases of the useful functions of `noisecut` package are provided
+as jupyter notebooks:
+
+- [Usage example of NoiseCut]("notebooks/Usage_example_of_NoiseCut")
+- [Synthetic data generation]("notebooks/Generation_of_synthetic_data")
+- [Noise-tolerant classification]("notebooks/Noise-tolerant_classification")
+- [Classification with reduced training data]("notebooks/Classification_with_reduced_training_data")
+
+Examples show how to use the package to fit the model and investigate
+the predicted results in score, probability or simple binary output format.
 
 ## License
 
