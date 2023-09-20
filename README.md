@@ -2,12 +2,22 @@
 
 ![NoiseCut logo](docs/artwork/NoiseCut_logo.jpg)
 
-A Tree-structured Hybrid model has been implemented in this package. It can be 
-used to fit a hybrid model which has the below criteria.
-1. two hidden layer
-2. arbitrary number of black boxes in the first hidden layer
-3. only one black box in the second hidden layer
-4. each input feature goes only to one black box.
+`noisecut` is an easy-to-use Python package for the implementation of tree-structured functional networks (FNs) 
+as a model class for the classification of binary data with prior knowledge 
+on input features. FNs can be viewed as modular neural networks, where the 
+structure of the links between the modules and the information flow from 
+input variables to the output variable is pre-determined. Here, each module of 
+the FN is simply 
+represented as a black-box module. The identification of an FN, i.e., 
+learning the input-output function of the FN, is then decomposed to the 
+identification of the individual interior black-box modules.
+
+`noisecut` can be used for any tree-structured FNs which has the below 
+criteria. It should have
+1. two hidden layer,
+2. arbitrary number of black boxes in the first hidden layer,
+3. only one black box in the second hidden layer,
+4. each input feature goes only to one black box (tree structure).
 
 ## Installation
 
