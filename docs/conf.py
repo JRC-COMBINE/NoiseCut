@@ -60,3 +60,12 @@ html_logo = "artwork/NoiseCut_logo_black.png"
 napoleon_numpy_docstring = True
 
 nbsphinx_execute = "never"
+
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "JRC-COMBINE",  # Username
+    "github_repo": "NoiseCut",  # Repo name
+    "github_version": "main/docs/",  # Version
+}
+
+# https://github.com/JRC-COMBINE/NoiseCut/blob/main/docs/notebooks/Classification_with_reduced_training_data.ipynb
