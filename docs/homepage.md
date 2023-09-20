@@ -47,11 +47,10 @@ as jupyter notebooks:
 - {doc}`notebooks/Noise-tolerant_classification`
 - {doc}`notebooks/Classification_with_reduced_training_data`
 
-Examples show you how to use the package to fit the model and investigate 
+Examples show you how to use the package to fit the model and investigate
 the predicted results in score, probability or simple binary output format.
 
 ## License
 
 `noisecut` was created by Hedieh Mirzaieazar and Moein E. Samadi. It is
 licensed under the terms of the GPLv3 license.
-
