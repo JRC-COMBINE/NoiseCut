@@ -78,10 +78,10 @@ accuracy, recall, precision, F1 = Metric.set_confusion_matrix(y_test, y_pred)
 Various use cases of the useful functions of `noisecut` package are provided
 as jupyter notebooks:
 
-- [Usage example of NoiseCut]("notebooks/Usage_example_of_NoiseCut")
-- [Synthetic data generation]("notebooks/Generation_of_synthetic_data")
-- [Noise-tolerant classification]("notebooks/Noise-tolerant_classification")
-- [Classification with reduced training data]("notebooks/Classification_with_reduced_training_data")
+- [Usage example of NoiseCut](docs/notebooks/Usage_example_of_NoiseCut.ipynb)
+- [Synthetic data generation](docs/notebooks/Generation_of_synthetic_data.ipynb)
+- [Noise-tolerant classification](docs/notebooks/Noise-tolerant_classification.ipynb)
+- [Classification with reduced training data](docs/notebooks/Classification_with_reduced_training_data.ipynb)
 
 Examples show how to use the package to fit the model and investigate
 the predicted results in score, probability or simple binary output format.
