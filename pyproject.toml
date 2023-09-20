@@ -36,11 +36,11 @@ release = ["build", "twine"]
 static-code-qa = ["pre-commit"]
 notebook = ["scikit-learn", "xgboost", "matplotlib", "jupyter"]
 docs = [
-  "sphinx", 
-  "nbsphinx", 
-  "sphinx-autoapi", 
-  "sphinx-rtd-theme", 
-  "myst-parser", 
+  "sphinx",
+  "nbsphinx",
+  "sphinx-autoapi",
+  "sphinx-rtd-theme",
+  "myst-parser",
   "sphinx-autobuild",
 ]
 dev = ["noisecut[test,release,static-code-qa,docs]"]

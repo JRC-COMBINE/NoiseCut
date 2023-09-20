@@ -69,7 +69,7 @@ the repository and install your local copy as described below.
 
 ### Fork the repository
 
-Click [this link](https://github.com/JRC-COMBINE/NoiseCut/fork) to fork the 
+Click [this link](https://github.com/JRC-COMBINE/NoiseCut/fork) to fork the
 repository on GitHub to your user area.
 
 Clone the repository to your local environment, using the URL provided by the
@@ -112,7 +112,7 @@ python -m venv ./venv
 
 ### Installing from source
 
-Pip-install the project, in the path in which [pyproject.toml][pyproject] 
+Pip-install the project, in the path in which [pyproject.toml][pyproject]
 file exists, with the `--editable` flag, which ensures that any
 changes you make to the source code are immediately reflected in your
 environment.
@@ -190,18 +190,18 @@ You can see the result in your browser by going to the [localhost:8000](http://l
 
 ### Building web pages
 
-Sphinx is used for automatic generation of html files for `noisecut` 
+Sphinx is used for automatic generation of html files for `noisecut`
 repository. If you have added lines of code to src directory of the package or  
-you have modified an existing jupyter notebook, you can simply update the 
-corresponding html files using: 
+you have modified an existing jupyter notebook, you can simply update the
+corresponding html files using:
 
 ```bash
 ./run.sh build-html
-``` 
+```
 
-However, if you aim to add a jupyter notebook for the first time, by running 
-the above command, the corresponding html files are build but you need to 
-add the jupyter notebook's name to the doctree in [index.md](docs/index.md) 
+However, if you aim to add a jupyter notebook for the first time, by running
+the above command, the corresponding html files are build but you need to
+add the jupyter notebook's name to the doctree in [index.md](docs/index.md)
 file.
 
 ## Pull Requests (PRs)
