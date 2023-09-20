@@ -40,11 +40,11 @@ $ pip install noisecut
 ## Usage
 
 Use cases of the useful functions of `noisecut` package has been provided on
-examples section. Examples show you how to use the package to fit the model and
-investigate the predicted results in score, probability or simple binary
-output format.
+[docs/notebooks](docs/notebooks/) in Jupyter notebook format. Examples show
+you how to use the package to fit the model and investigate the predicted
+results in score, probability or simple binary output format.
 
 ## License
 
-`noisecut` was created by Hedieh Mirzaieazar. It is licensed under the terms
-of the GPLv3 license.
+`noisecut` was created by Hedieh Mirzaieazar and Moein E. Samadi. It is
+licensed under the terms of the GPLv3 license.

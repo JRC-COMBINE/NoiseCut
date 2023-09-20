@@ -9,6 +9,7 @@ readme = "README.md"
 license = {text = "GPLv3"}
 authors = [
     {name = "Hedieh Mirzaieazar", email = "hedieh.mirzaieazar@rwth-aachen.de"},
+    {name = "Moein E. Samadi", email = "moein.samadi@rwth-aachen.de"},
 ]
 requires-python = ">=3.9"
 dependencies = [
