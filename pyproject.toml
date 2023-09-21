@@ -19,15 +19,16 @@ dependencies = [
   'gurobipy',
 ]
 classifiers = [
+  "Development Status :: 3 - Alpha",
   "Operating System :: Microsoft :: Windows",
   "Operating System :: MacOS",
-  "Operating System :: Linux",
+  "Operating System :: POSIX :: Linux",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Intended Audience :: Science/Research",
   "Topic :: Scientific/Engineering",
-  "License :: OSI Approved :: GPL-3.0 License",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 ]
 dynamic = ["version"]
 
