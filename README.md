@@ -2,6 +2,9 @@
 
 ![NoiseCut logo](docs/artwork/NoiseCut_logo.jpg)
 
+![GitHub](https://img.shields.io/github/license/JRC-COMBINE/NoiseCut)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/JRC-COMBINE/NoiseCut/build-test.yml?event=push&label=CI&link=https%3A%2F%2Fgithub.com%2FJRC-COMBINE%2FNoiseCut%2Factions)
+
 `noisecut` is an easy-to-use Python package for the implementation of
 tree-structured functional networks (FNs) as a model class for the
 classification of binary data with prior knowledge on input features.
