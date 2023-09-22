@@ -47,6 +47,10 @@ docs = [
 ]
 dev = ["noisecut[test,release,static-code-qa,docs]"]
 
+[project.urls]
+Repository = "https://github.com/JRC-COMBINE/NoiseCut"
+Documentation = "https://noisecut.readthedocs.io/en/latest/"
+
 # docs: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
 [tool.setuptools.dynamic]
 version = { file = "version.txt" }
