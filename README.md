@@ -1,6 +1,8 @@
 # NoiseCut
 
-![NoiseCut logo](docs/artwork/NoiseCut_logo.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JRC-COMBINE/NoiseCut/main/docs/artwork/NoiseCut_logo.jpg" width="800" />
+</p>
 
 ![GitHub](https://img.shields.io/github/license/JRC-COMBINE/NoiseCut)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/JRC-COMBINE/NoiseCut/build-test.yml?event=push&label=CI&link=https%3A%2F%2Fgithub.com%2FJRC-COMBINE%2FNoiseCut%2Factions)
@@ -81,10 +83,10 @@ accuracy, recall, precision, F1 = Metric.set_confusion_matrix(y_test, y_pred)
 Various use cases of the useful functions of `noisecut` package are provided
 as jupyter notebooks:
 
-- [Usage example of NoiseCut](docs/notebooks/Usage_example_of_NoiseCut.ipynb)
-- [Synthetic data generation](docs/notebooks/Generation_of_synthetic_data.ipynb)
-- [Noise-tolerant classification](docs/notebooks/Noise-tolerant_classification.ipynb)
-- [Classification with reduced training data](docs/notebooks/Classification_with_reduced_training_data.ipynb)
+- [Usage example of NoiseCut](https://github.com/JRC-COMBINE/NoiseCut/blob/main/docs/notebooks/Usage_example_of_NoiseCut.ipynb)
+- [Synthetic data generation](https://github.com/JRC-COMBINE/NoiseCut/blob/main/docs/notebooks/Generation_of_synthetic_data.ipynb)
+- [Noise-tolerant classification](https://github.com/JRC-COMBINE/NoiseCut/blob/main/docs/notebooks/Noise-tolerant_classification.ipynb)
+- [Classification with reduced training data](https://github.com/JRC-COMBINE/NoiseCut/blob/main/docs/notebooks/Classification_with_reduced_training_data.ipynb)
 
 Examples show how to use the package to fit the model and investigate
 the predicted results in score, probability or simple binary output format.
