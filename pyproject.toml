@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "noisecut"
-description = "A Tree-structured Hybrid model for classification of binary data"
+description = "A tree-structured hybrid model for classification of binary data."
 readme = "README.md"
 license = {text = "GPLv3"}
 authors = [
