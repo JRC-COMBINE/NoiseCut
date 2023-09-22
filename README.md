@@ -1,6 +1,8 @@
 # NoiseCut
 
-![NoiseCut logo](https://raw.githubusercontent.com/JRC-COMBINE/NoiseCut/main/docs/artwork/NoiseCut_logo.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JRC-COMBINE/NoiseCut/main/docs/artwork/NoiseCut_logo.jpg" width="800" />
+</p>
 
 ![GitHub](https://img.shields.io/github/license/JRC-COMBINE/NoiseCut)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/JRC-COMBINE/NoiseCut/build-test.yml?event=push&label=CI&link=https%3A%2F%2Fgithub.com%2FJRC-COMBINE%2FNoiseCut%2Factions)
