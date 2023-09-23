@@ -435,6 +435,8 @@ class CoderNoiseCut(StructuredData):
         """
         if with_more_data:
             self.coder_add_training_data(x, y)
+            self.number_of_0_labels[:] = 0
+            self.number_of_1_labels[:] = 0
         else:
             self.coder_set_training_data(x, y)
         self.initialize_w()
