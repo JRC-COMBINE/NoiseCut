@@ -11,13 +11,14 @@ cfgv==3.4.0
 charset-normalizer==3.2.0
 colorama==0.4.6
 coverage==7.3.1
+cplex==22.1.1.0
 defusedxml==0.7.1
 distlib==0.3.7
+docplex==2.25.236
 docutils==0.18.1
 exceptiongroup==1.1.3
 fastjsonschema==2.18.0
 filelock==3.12.4
-gurobipy==10.0.3
 identify==2.5.29
 idna==3.4
 imagesize==1.4.1
@@ -46,7 +47,7 @@ nbformat==5.9.2
 nbsphinx==0.9.3
 nh3==0.2.14
 nodeenv==1.8.0
--e git+ssh://git@github.com/JRC-COMBINE/NoiseCut.git@df36ce83e1dae850ef5519ee0c5103361c7ac3ec#egg=noisecut
+-e git+ssh://git@github.com/JRC-COMBINE/NoiseCut.git@bb2b82987ac15ea076892a7a3e5ef682e89dfc25#egg=noisecut
 numpy==1.26.0
 packaging==23.1
 pandas==2.1.1
