@@ -8,7 +8,14 @@ echo $THIS_DIR
 # install core and development Python dependencies into the currently activated venv
 function install {
     python -m pip install --upgrade pip
-    python -m pip install --editable "$THIS_DIR/[dev,docs]"
+    python -m pip install --editable "$THIS_DIR/[dev,docs]" --no-cache-dir
+}
+
+function install:release {
+    clean
+    python -m pip install --upgrade pip
+    python -m pip install --editable "$THIS_DIR/[release]" --no-cache-dir
+    build
 }
 
 # run linting, formatting, and other static code quality tools

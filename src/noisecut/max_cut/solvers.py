@@ -3,10 +3,9 @@
 # Author: Hedieh Mirzaieazar <hedieh.mirzaieazar@rwth-aachen.de>
 from typing import Union
 
-import gurobipy as gp
 import numpy as np
 import numpy.typing as npt
-from gurobipy import GRB
+from docplex.mp.model import Model
 
 from noisecut.max_cut.base_maxcut import BaseMaxCut
 
@@ -105,7 +104,7 @@ class MaxCutSolvers(BaseMaxCut):
 
     def solve_maxcut(self) -> tuple[float, npt.NDArray[np.bool_]]:
         """
-        Solve MaxCut problem by utilizing GUROBI optimization package.
+        Solve MaxCut problem by utilizing CPLEX optimization package.
 
         Returns
         -------
@@ -116,23 +115,23 @@ class MaxCutSolvers(BaseMaxCut):
             the `sol` array is representative of each vertex, like `sol[0]`
             represents the label for the vertex 0.
         """
-        with gp.Env(empty=True) as env:
-            env.setParam("OutputFlag", 0)
-            env.start()
-            mdl = gp.Model("MAXCUT-GUROBI", env=env)
-            x = mdl.addMVar(shape=self.n_vertices, vtype=GRB.BINARY)
-            obj = sum(
-                self.weight[self.calc_index_of_linear_array(i, j)]
-                * (x[i] - x[j])
-                * (x[i] - x[j])
-                for i in range(self.n_vertices)
-                for j in range(i + 1, self.n_vertices)
-            )
-            # mdl.params.mipgap=0.001
-            mdl.setObjective(expr=obj, sense=GRB.MAXIMIZE)
-            mdl.optimize()
+        sol = np.zeros(self.n_vertices, bool)
+        mdl = Model(name="MaxCut")
+        x = mdl.binary_var_list(keys=self.n_vertices, name="x")
 
-            if x.X[0]:
-                return mdl.objVal, np.logical_not(x.X)
+        obj = mdl.sum(
+            self.weight[self.calc_index_of_linear_array(i, j)]
+            * (x[i] - x[j])
+            * (x[i] - x[j])
+            for i in range(self.n_vertices)
+            for j in range(i + 1, self.n_vertices)
+        )
 
-            return mdl.objVal, x.X
+        mdl.maximize(obj)
+
+        assert mdl.solve(), "Solve failed"
+
+        for i in range(self.n_vertices):
+            sol[i] = round(x[i].solution_value, 0)
+
+        return mdl.objective_value, sol

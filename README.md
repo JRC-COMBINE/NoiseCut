@@ -35,7 +35,8 @@ criteria. It should have
 - numpy
 - pandas
 - scipy
-- gurobipy
+- cplex
+- docplex
 
 ### User installation
 

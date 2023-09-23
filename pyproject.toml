@@ -16,7 +16,8 @@ dependencies = [
   'numpy',
   'pandas',
   'scipy',
-  'gurobipy',
+  'cplex',
+  'docplex',
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",
