@@ -8,6 +8,7 @@
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/JRC-COMBINE/NoiseCut/build-test.yml?event=push&label=CI&link=https%3A%2F%2Fgithub.com%2FJRC-COMBINE%2FNoiseCut%2Factions)](https://github.com/JRC-COMBINE/NoiseCut/actions)
 [![Read the Docs](https://img.shields.io/readthedocs/noisecut)](https://noisecut.readthedocs.io/en/latest/)
 ![PyPI - Version](https://img.shields.io/pypi/v/noisecut)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/noisecut)
 
 
 `noisecut` is an easy-to-use Python package for the implementation of
