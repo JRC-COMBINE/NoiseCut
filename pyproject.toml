@@ -33,6 +33,7 @@ docplex = "*"
 
 [project]
 name = "noisecut"
+version = "v0.1.12"
 description = "A tree-structured hybrid model for classification of binary data."
 readme = "README.md"
 license = {text = "GPLv3"}
