@@ -32,6 +32,22 @@ classifiers = [
 ]
 dynamic = ["version"]
 
+
+[tool.poetry]
+name = "noisecut"
+version = "v0.1.10"
+description = "A tree-structured hybrid model for classification of binary data."
+readme = "README.md"
+authors = ["Hedieh Mirzaieazar, Moein E. Samadi <moein.samadi@rwth-aachen.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "*"
+pandas = "*"
+scipy = "*"
+cplex = "*"
+docplex = "*"
+
 [project.optional-dependencies]
 test = ["pytest", "pytest-cov"]
 release = ["build", "twine"]
@@ -97,19 +113,3 @@ exclude = [
 
 [tool.mypy]
 ignore_missing_imports = true
-
-
-[tool.poetry]
-name = "noisecut"
-version = "v0.1.10"
-description = "A tree-structured hybrid model for classification of binary data."
-readme = "README.md"
-authors = ["Hedieh Mirzaieazar, Moein E. Samadi <moein.samadi@rwth-aachen.de>"]
-
-[tool.poetry.dependencies]
-python = "^3.9"
-numpy = "*"
-pandas = "*"
-scipy = "*"
-cplex = "*"
-docplex = "*"
