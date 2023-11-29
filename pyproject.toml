@@ -31,6 +31,15 @@ scipy = "*"
 cplex = "*"
 docplex = "*"
 
+[project]
+name = "noisecut"
+description = "A tree-structured hybrid model for classification of binary data."
+readme = "README.md"
+license = {text = "GPLv3"}
+authors = [
+    {name = "Hedieh Mirzaieazar, Moein E. Samadi", email = "moein.samadi@rwth-aachen.de"}
+]
+
 
 # docs: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
 [tool.setuptools.dynamic]
