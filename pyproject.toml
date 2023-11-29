@@ -2,22 +2,14 @@
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[project]
+[tool.poetry]
 name = "noisecut"
-description = "A tree-structured hybrid model for classification of binary data."
+version = "v0.1.12"
+description = "A Python Package for Noise-Tolerant Classification of Binary Data using Prior Knowledge Integration and Max-Cut Solutions"
 readme = "README.md"
-license = {text = "GPLv3"}
-authors = [
-    {name = "Hedieh Mirzaieazar, Moein E. Samadi", email = "moein.samadi@rwth-aachen.de"}
-]
-requires-python = ">=3.9"
-dependencies = [
-  'numpy',
-  'pandas',
-  'scipy',
-  'cplex',
-  'docplex',
-]
+authors = ["Hedieh Mirzaieazar, Moein E. Samadi <moein.samadi@rwth-aachen.de>"]
+repository = "https://github.com/JRC-COMBINE/NoiseCut"
+documentation = "https://noisecut.readthedocs.io/en/latest/"
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Operating System :: Microsoft :: Windows",
@@ -30,15 +22,6 @@ classifiers = [
   "Topic :: Scientific/Engineering",
   "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 ]
-dynamic = ["version"]
-
-
-[tool.poetry]
-name = "noisecut"
-version = "v0.1.11"
-description = "A tree-structured hybrid model for classification of binary data."
-readme = "README.md"
-authors = ["Hedieh Mirzaieazar, Moein E. Samadi <moein.samadi@rwth-aachen.de>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -48,24 +31,6 @@ scipy = "*"
 cplex = "*"
 docplex = "*"
 
-[project.optional-dependencies]
-test = ["pytest", "pytest-cov"]
-release = ["build", "twine"]
-static-code-qa = ["pre-commit"]
-notebook = ["scikit-learn", "xgboost", "matplotlib", "jupyter"]
-docs = [
-  "sphinx",
-  "nbsphinx",
-  "sphinx-autoapi",
-  "sphinx-rtd-theme",
-  "myst-parser",
-  "sphinx-autobuild",
-]
-dev = ["noisecut[test,release,static-code-qa,docs]"]
-
-[project.urls]
-Repository = "https://github.com/JRC-COMBINE/NoiseCut"
-Documentation = "https://noisecut.readthedocs.io/en/latest/"
 
 # docs: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
 [tool.setuptools.dynamic]
