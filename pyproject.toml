@@ -34,11 +34,31 @@ docplex = "*"
 [project]
 name = "noisecut"
 version = "v0.1.12"
-description = "A tree-structured hybrid model for classification of binary data."
+description = "A Python Package for Noise-Tolerant Classification of Binary Data using Prior Knowledge Integration and Max-Cut Solutions"
 readme = "README.md"
 license = {text = "GPLv3"}
 authors = [
     {name = "Hedieh Mirzaieazar, Moein E. Samadi", email = "moein.samadi@rwth-aachen.de"}
+]
+requires-python = ">=3.9"
+dependencies = [
+  'numpy',
+  'pandas',
+  'scipy',
+  'cplex',
+  'docplex',
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 ]
 
 
