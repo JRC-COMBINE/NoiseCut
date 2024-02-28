@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.poetry]
 name = "noisecut"
-version = "v0.1.13"
+version = "v0.1.14"
 description = "A Python Package for Noise-Tolerant Classification of Binary Data using Prior Knowledge Integration and Max-Cut Solutions"
 readme = "README.md"
 authors = ["Hedieh Mirzaieazar, Moein E. Samadi <moein.samadi@rwth-aachen.de>"]
